@@ -33,18 +33,15 @@ pipeline {
             echo 'Workspace cleaned up!'
         }
         success {
-            // Archive the main.py script as an artifact
-            archiveArtifacts artifacts: 'main.py', fingerprint: true
-            echo 'main.py archived as artifact.'
 
             // Sending an email notification (assuming Jenkins is configured with an SMTP server)
-            mail to: 'team@example.com',
+            mail to: 'jcsoong@hlbb.hongleong.com.my',
                  subject: "Success: ${currentBuild.fullDisplayName}",
                  body: "The build was successful! Build details: ${env.BUILD_URL}"
         }
         failure {
             // Sending an email notification on failure
-            mail to: 'team@example.com',
+            mail to: 'jcsoong@hlbb.hongleong.com.my',
                  subject: "Failure: ${currentBuild.fullDisplayName}",
                  body: "The build failed. Check out the details: ${env.BUILD_URL}"
         }
