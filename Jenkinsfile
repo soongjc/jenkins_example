@@ -35,7 +35,7 @@ pipeline {
         success {
 
             // Sending an email notification (assuming Jenkins is configured with an SMTP server)
-            echo "Success: ${currentBuild.fullDisplayName}",
+            echo "Success: ${currentBuild.fullDisplayName}"
         }
         failure {
             // Sending an email notification on failure
